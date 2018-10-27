@@ -18,17 +18,34 @@
 # Calculate the total price based on the ticket option selected and
 # the number of visitors. Display the total price in money format.
 
-ticket = None # not necessary
+adults = int(input('how many adults: '))
+children = int(input('how many children: '))
 
-if ticket >94:
-    Option_1 = True
-    print("$94 for each child")
+one_park_a_day_adults = 114
+one_park_a_day_children = 94
+park_to_park_adults = 144
+park_to_park_children = 124
 
-if ticket >114:
-    Option_1 = True
-    print("$94 for each child")
+One_park_a_day_adults_and_children = (one_park_a_day_adults * adults) + ( one_park_a_day_children * children)
 
-print('A. One park a day, $114 for each adult and $94 for each child.')
-print('B. Park to park (going two parks on the same day), $144 for each adult and $124 for each child. ')
+print("A. One park a day, for adult and  child. $ % for adult and  child." %One_park_a_day_adults_and_children)
 
-option = input('Please select A or B')
+park_to_park_adults_and_children = (park_to_park_adults * adults) + (park_to_park_children * children)
+
+print("B. park-to-park, for adult and  child. $ % for adult and  child." %park_to_park_adults_and_children)
+
+
+A = One_park_a_day_adults_and_children
+B = park_to_park_adults_and_children
+#print('A. One park a day, $114 for each adult and $94 for each child.')
+#print('B. Park to park (going two parks on the same day), $144 for each adult and $124 for each child. ')
+
+option = input('Please select A or B:')
+
+if option == "A":
+    print("For Selecting Option A your bill will be " +str(A))
+if option == "B":
+    print("For Selecting Option B your bill will be " + str(B))
+else:
+    print("Input Something Within A or B")
+
